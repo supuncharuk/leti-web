@@ -1,0 +1,37 @@
+/* State: Collapsed on Desktop */
+@media (min-width: 992px) {
+  body.sidebar-toggled #sidebar {
+    transform: translateX(-100%);
+  }
+
+  body.sidebar-toggled #content {
+    margin-left: 0;
+  }
+}
+
+/* State: Hidden by Default on Mobile */
+@media (max-width: 991.98px) {
+  #sidebar {
+    transform: translateX(-100%);
+  }
+
+  #content {
+    margin-left: 0;
+  }
+
+  body.sidebar-toggled #sidebar {
+    transform: translateX(0);
+  }
+
+  body.sidebar-toggled #sidebar-overlay {
+    display: block;
+  }
+
+  #close-sidebar {
+    display: block;
+  }
+}
+
+#toggle-sidebar {
+  display: block !important;
+}
