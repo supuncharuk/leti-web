@@ -99,7 +99,7 @@ $users = $conn->query("SELECT id, username, user_role, user_status, created_at F
                         <th>Username</th>
                         <th>Role</th>
                         <th>Status</th>
-                        <th width="20%" class="text-center">Actions</th>
+                        <th colspan="3" width="20%" class="text-center">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -125,15 +125,30 @@ $users = $conn->query("SELECT id, username, user_role, user_status, created_at F
                                 </td>
                                 <td class="text-center">
                                     <button class="btn btn-sm btn-outline-primary"
-                                        onclick='editUser(<?php echo json_encode($row); ?>)' title="Edit Profile">
+                                        onclick='editUser(<?php echo $row['id']; ?>)'>
                                         <i class="fas fa-edit"></i>
                                     </button>
-                                    <button class="btn btn-sm btn-outline-warning"
-                                        onclick='openPasswordModal(<?php echo $row['id']; ?>, "<?php echo htmlspecialchars($row['username']); ?>")'
-                                        title="Change Password">
-                                        <i class="fas fa-key"></i>
-                                    </button>
-                                    <?php if ($row['user_role'] !== 'admin'): ?>
+                                </td>
+                                <?php if ($row['user_role'] === 'admin'): ?>
+                                    <td colspan="2" class="text-center">
+                                        <button class="btn btn-sm btn-outline-warning"
+                                            onclick='openPasswordModal(<?php echo $row['id']; ?>, "<?php echo htmlspecialchars($row['username']); ?>")'
+                                            title="Change Password">
+                                            <i class="fas fa-key"></i>
+                                        </button>
+                                    </td>
+                                <?php else: ?>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-outline-warning"
+                                            onclick='openPasswordModal(<?php echo $row['id']; ?>, "<?php echo htmlspecialchars($row['username']); ?>")'
+                                            title="Change Password">
+                                            <i class="fas fa-key"></i>
+                                        </button>
+                                    </td>
+                                <?php endif; ?>
+
+                                <?php if ($row['user_role'] !== 'admin'): ?>
+                                    <td class="text-center">
                                         <?php if ($row['user_status'] == '1'): ?>
                                             <a href="?toggle_status=<?php echo $row['id']; ?>&current=1"
                                                 class="btn btn-sm btn-outline-danger" title="Deactivate User">
@@ -145,8 +160,8 @@ $users = $conn->query("SELECT id, username, user_role, user_status, created_at F
                                                 <i class="fas fa-user-check"></i>
                                             </a>
                                         <?php endif; ?>
-                                    <?php endif; ?>
-                                </td>
+                                    </td>
+                                <?php endif; ?>
                             </tr>
                         <?php endwhile; ?>
                     <?php else: ?>
@@ -235,15 +250,34 @@ $users = $conn->query("SELECT id, username, user_role, user_status, created_at F
         document.getElementById('passwordSection').style.display = 'block';
     }
 
-    function editUser(data) {
-        document.getElementById('modalTitle').innerText = 'Edit User';
-        document.getElementById('userId').value = data.id;
-        document.getElementById('username').value = data.username;
-        document.getElementById('user_role').value = data.user_role;
-        document.getElementById('password').required = false;
-        document.getElementById('passwordSection').style.display = 'none';
-
+    function editUser(id) {
+        document.getElementById('modalTitle').innerText = 'Loading...';
         new bootstrap.Modal(document.getElementById('userModal')).show();
+
+        $.ajax({
+            url: 'ajax/get-user.php',
+            type: 'GET',
+            data: {
+                id: id
+            },
+            dataType: 'json',
+            success: function(response) {
+                if (response.status === 'success') {
+                    const data = response.data;
+                    document.getElementById('modalTitle').innerText = 'Edit User';
+                    document.getElementById('userId').value = data.id;
+                    document.getElementById('username').value = data.username;
+                    document.getElementById('user_role').value = data.user_role;
+                    document.getElementById('password').required = false;
+                    document.getElementById('passwordSection').style.display = 'none';
+                } else {
+                    alert('Error: ' + response.message);
+                }
+            },
+            error: function() {
+                alert('An error occurred while fetching course details.');
+            }
+        });
     }
 
     function openPasswordModal(id, username) {
@@ -254,7 +288,7 @@ $users = $conn->query("SELECT id, username, user_role, user_status, created_at F
     }
 
     <?php if ($message): ?>
-        window.addEventListener('load', function () {
+        window.addEventListener('load', function() {
             showAlert('<?php echo $message; ?>', '<?php echo $messageType; ?>', '', <?php echo $messageType === 'error' ? 'false' : 'true'; ?>);
             <?php if ($messageType === 'error'): ?>
                 <?php if (isset($_POST['save_user'])): ?>
