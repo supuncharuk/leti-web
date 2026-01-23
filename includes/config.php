@@ -5,7 +5,7 @@
  */
 
 // Define the base URL if needed (optional for late-stage dynamic pathing)
-define('BASE_URL', 'http://localhost/leti/');
+define('BASE_URL', 'http://localhost/leti-web/');
 
 // Page titles helper
 $siteName = "Light Engineering Training Institute Ahangama";
