@@ -188,7 +188,7 @@ $news = $conn->query("
                                 <?php endif; ?>
                                 <td class="text-center">
                                     <button class="btn btn-sm btn-outline-primary me-2"
-                                        onclick='editNews(<?php echo json_encode($row); ?>)'>
+                                        onclick='editNews(<?php echo $row['id']; ?>)'>
                                         <i class="fas fa-edit"></i>
                                     </button>
                                 </td>
@@ -287,7 +287,7 @@ $news = $conn->query("
 </div>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#newsContent').summernote({
             placeholder: 'Write your news content here...',
             tabsize: 2,
@@ -317,15 +317,33 @@ $news = $conn->query("
         $('#newsContent').summernote('code', '');
     }
 
-    function editNews(data) {
-        document.getElementById('modalTitle').innerText = 'Edit News Article';
-        document.getElementById('newsId').value = data.id;
-        document.getElementById('existingImage').value = data.image || '';
-        document.getElementById('newsTitle').value = data.title;
-        document.getElementById('newsCategory').value = data.category_id;
-        document.getElementById('newsDate').value = data.publish_date;
-        $('#newsContent').summernote('code', data.content);
+    function editNews(id) {
+        document.getElementById('modalTitle').innerText = 'Loading...';
         new bootstrap.Modal(document.getElementById('newsModal')).show();
+
+        $.ajax({
+            url: 'ajax/get-news.php',
+            type: 'GET',
+            data: { id: id },
+            dataType: 'json',
+            success: function (response) {
+                if (response.status === 'success') {
+                    const data = response.data;
+                    document.getElementById('modalTitle').innerText = 'Edit News Article';
+                    document.getElementById('newsId').value = data.id;
+                    document.getElementById('existingImage').value = data.image || '';
+                    document.getElementById('newsTitle').value = data.title;
+                    document.getElementById('newsCategory').value = data.category_id;
+                    document.getElementById('newsDate').value = data.publish_date;
+                    $('#newsContent').summernote('code', data.content);
+                } else {
+                    alert('Error: ' + response.message);
+                }
+            },
+            error: function () {
+                alert('An error occurred while fetching course details.');
+            }
+        });
     }
 
     <?php if ($message): ?>
