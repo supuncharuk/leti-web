@@ -18,6 +18,8 @@
                         href="courses.php">Courses</a></li>
                 <li class="nav-item"><a class="nav-link <?php echo ($currentPage == 'news') ? 'active' : ''; ?>"
                         href="news.php">News</a></li>
+                <li class="nav-item"><a class="nav-link <?php echo ($currentPage == 'gallery') ? 'active' : ''; ?>"
+                        href="gallery.php">Gallery</a></li>
                 <li class="nav-item"><a class="nav-link <?php echo ($currentPage == 'contact') ? 'active' : ''; ?>"
                         href="contact.php">Contact Us</a></li>
             </ul>

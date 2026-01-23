@@ -62,6 +62,11 @@ checkLogin();
                     <i class="fas fa-newspaper"></i> Manage News
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link <?php echo ($currentPage == 'gallery') ? 'active' : ''; ?>" href="manage-gallery.php">
+                    <i class="fas fa-images"></i> Manage Gallery
+                </a>
+            </li>
             <?php if (isAdmin()): ?>
                 <li class="nav-item">
                     <a class="nav-link <?php echo ($currentPage == 'users') ? 'active' : ''; ?>" href="manage-users.php">

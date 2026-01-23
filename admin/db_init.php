@@ -98,6 +98,37 @@ if ($check->num_rows == 0) {
     }
 }
 
+
+// Albums Table
+$sql = "CREATE TABLE IF NOT EXISTS albums (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    cover_image VARCHAR(255),
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)";
+if ($conn->query($sql) === TRUE) {
+    echo "Table 'albums' created successfully.<br>";
+} else {
+    echo "Error creating 'albums' table: " . $conn->error . "<br>";
+}
+
+// Gallery Images Table
+$sql = "CREATE TABLE IF NOT EXISTS gallery_images (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    album_id INT NOT NULL,
+    image_path VARCHAR(255) NOT NULL,
+    caption VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (album_id) REFERENCES albums(id) ON DELETE CASCADE
+)";
+if ($conn->query($sql) === TRUE) {
+    echo "Table 'gallery_images' created successfully.<br>";
+} else {
+    echo "Error creating 'gallery_images' table: " . $conn->error . "<br>";
+}
+
 echo "Database initialization complete.";
 $conn->close();
 ?>
