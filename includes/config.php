@@ -5,16 +5,26 @@
  */
 
 // Define the base URL if needed (optional for late-stage dynamic pathing)
-define('BASE_URL', 'http://localhost/leti-web/');
+// Environment Settings
+if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == '127.0.0.1') {
+    // Local Configuration
+    define('BASE_URL', 'http://localhost/leti-web/');
+    define('DB_HOST', 'localhost');
+    define('DB_USER', 'root');
+    define('DB_PASS', '');
+    define('DB_NAME', 'leti_db');
+} else {
+    // Production Configuration (Real World)
+    // TODO: Update these values with your actual production details
+    define('BASE_URL', 'https://leti.pdscharuka.xyz.lk/');
+    define('DB_HOST', 'localhost'); // Usually localhost even on production, but check your provider
+    define('DB_USER', 'pdscharu_leti');
+    define('DB_PASS', 'leti@1979');
+    define('DB_NAME', 'pdscharu_leti_db');
+}
 
 // Page titles helper
 $siteName = "Light Engineering Training Institute Ahangama";
-
-// Database Configuration
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'leti_db');
 
 // Utility function to get full page title
 function getPageTitle($pageTitle)
