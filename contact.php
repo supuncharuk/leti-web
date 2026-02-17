@@ -22,7 +22,7 @@ include 'includes/breadcrumb.php';
                     </div>
                     <div>
                         <h5>Our Location</h5>
-                        <p class="text-muted">No. 123, Main Street,<br>Ahangama, Sri Lanka</p>
+                        <p class="text-muted">Light Engineering Training Institute,<br>Ahangama</p>
                     </div>
                 </div>
 
@@ -32,7 +32,7 @@ include 'includes/breadcrumb.php';
                     </div>
                     <div>
                         <h5>Phone Number</h5>
-                        <p class="text-muted">+94 11 234 5678<br>+94 77 123 4567</p>
+                        <p class="text-muted">+94 91 228 1202</p>
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@ include 'includes/breadcrumb.php';
                     </div>
                     <div>
                         <h5>Email Address</h5>
-                        <p class="text-muted">info@leti-ahangama.lk<br>admissions@leti-ahangama.lk</p>
+                        <p class="text-muted">lightengineering612@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -78,9 +78,12 @@ include 'includes/breadcrumb.php';
             <div class="col-12">
                 <div class="rounded overflow-hidden shadow-sm" style="height: 400px;">
                     <!-- Google Map Placeholder -->
-                    <iframe
+                    <!-- <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15873.666986567!2d80.3666667!3d6.0000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae16f6b5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2sAhangama%2C%20Sri%20Lanka!5e0!3m2!1sen!2slk!4v1620000000000!5m2!1sen!2slk"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.1297016990893!2d80.35551939999999!3d5.9768719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae113b9825ac903%3A0x4f3681f31dadeede!2sLETI%20Ahangama!5e0!3m2!1sen!2slk!4v1771347766383!5m2!1sen!2slk"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>

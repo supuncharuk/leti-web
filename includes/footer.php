@@ -19,9 +19,9 @@
             <div class="col-md-3 mb-4">
                 <h5>Contact Us</h5>
                 <ul class="list-unstyled small">
-                    <li><i class="fas fa-map-marker-alt me-2"></i> Main Street, Ahangama, Sri Lanka</li>
-                    <li><i class="fas fa-phone me-2"></i> +94 11 234 5678</li>
-                    <li><i class="fas fa-envelope me-2"></i> info@leti-ahangama.lk</li>
+                    <li><i class="fas fa-map-marker-alt me-2"></i>Light Engineering Training Institute, Ahangama</li>
+                    <li><i class="fas fa-phone me-2"></i> +94 91 228 1202</li>
+                    <li><i class="fas fa-envelope me-2"></i>lightengineering612@gmail.com</li>
                 </ul>
             </div>
             <div class="col-md-3 mb-4">
