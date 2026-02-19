@@ -57,13 +57,13 @@ include 'includes/header.php';
                 <h2 class="section-title">Administration</h2>
             </div>
             <div class="col-md-3 text-center mb-4">
-                <img src="https://placehold.co/200x200?text=Principal"
+                <img src="https://placehold.co/200x200?text=Registrar"
                     class="rounded-circle mb-3 border border-3 border-danger" alt="Principal">
                 <h5></h5>
                 <p class="text-muted">අධ්‍යක්ෂ<br>(දකුණු පළාත් කර්මාන්ත සංවර්ධන දෙපාර්තමේන්තුව)</p>
             </div>
             <div class="col-md-3 text-center mb-4">
-                <img src="https://placehold.co/200x200?text=Director"
+                <img src="https://placehold.co/200x200?text=Registrar"
                     class="rounded-circle mb-3 border border-3 border-danger" alt="Director">
                 <h5></h5>
                 <p class="text-muted">සහකාර අධ්‍යක්ෂ<br>(දකුණු පළාත් කර්මාන්ත සංවර්ධන දෙපාර්තමේන්තුව)</p>
