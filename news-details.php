@@ -47,10 +47,10 @@ include 'includes/breadcrumb.php';
                     <?php echo nl2br($newsItem['content']); ?>
                 </div>
 
-                <div class="alert alert-info mt-4">
+                <!-- <div class="alert alert-info mt-4">
                     <strong>Note:</strong> Selected candidates will be called for an interview in the first week of
                     February.
-                </div>
+                </div> -->
 
                 <!-- Share Buttons -->
                 <div class="mt-5 border-top pt-4">
