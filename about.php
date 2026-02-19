@@ -59,25 +59,25 @@ include 'includes/header.php';
             <div class="col-md-3 text-center mb-4">
                 <img src="https://placehold.co/200x200?text=Principal"
                     class="rounded-circle mb-3 border border-3 border-danger" alt="Principal">
-                <h5>ස්</h5>
+                <h5></h5>
                 <p class="text-muted">අධ්‍යක්ෂ<br>(දකුණු පළාත් කර්මාන්ත සංවර්ධන දෙපාර්තමේන්තුව)</p>
             </div>
             <div class="col-md-3 text-center mb-4">
                 <img src="https://placehold.co/200x200?text=Director"
                     class="rounded-circle mb-3 border border-3 border-danger" alt="Director">
-                <h5>Mrs. K. Silva</h5>
+                <h5></h5>
                 <p class="text-muted">සහකාර අධ්‍යක්ෂ<br>(දකුණු පළාත් කර්මාන්ත සංවර්ධන දෙපාර්තමේන්තුව)</p>
             </div>
             <div class="col-md-3 text-center mb-4">
                 <img src="https://placehold.co/200x200?text=Registrar"
                     class="rounded-circle mb-3 border border-3 border-danger" alt="Registrar">
-                <h5>Mr. S. Fernando</h5>
+                <h5></h5>
                 <p class="text-muted">අධීක්ෂණ නිළධාරි<br>(දකුණු පළාත් කර්මාන්ත සංවර්ධන දෙපාර්තමේන්තුව)</p>
             </div>
             <div class="col-md-3 text-center mb-4">
                 <img src="https://placehold.co/200x200?text=Registrar"
                     class="rounded-circle mb-3 border border-3 border-danger" alt="Registrar">
-                <h5>ආර්. ඒ. චතුර පත්මජිත් මහතා</h5>
+                <h5>ආර්. ඒ. චතුර පත්මජිත්</h5>
                 <p class="text-muted">ස්ථානභාර නිළධාරි<br>(ලුහු ඉංජිනේරු අභ්‍යාස ආයතනය - අහංගම)</p>
             </div>
         </div>
